@@ -1,12 +1,24 @@
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <nav-bar></nav-bar>
+    <router-view/>
   </div>
-  <router-view/>
 </template>
+<script>
+import NavBar from './components/NavBar/NavBar.vue';
+
+export default {
+  components: {
+    NavBar,
+  },
+};
+</script>
 
 <style lang="scss">
+body{
+  padding: 0;
+  margin: 0;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -16,7 +28,7 @@
 }
 
 #nav {
-  padding: 30px;
+  display: flex;
 
   a {
     font-weight: bold;
