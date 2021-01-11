@@ -24,7 +24,7 @@ export default {
     return {
       links: [
         {
-          value: 'Home',
+          value: 'Most Popular',
           link: '/',
           icon: 'homeIcon',
         },
@@ -43,10 +43,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .container{
-    width: 100%;
-    height: 100vh;
     max-height: 100%;
-    max-width: 300px;
     background: #D9664D ;
 
         .nav_header{
@@ -61,6 +58,7 @@ export default {
             }
         .nav_list{
             list-style-type: none;
+            width: 250px;
         }
             .nav_item{
                 display: flex;

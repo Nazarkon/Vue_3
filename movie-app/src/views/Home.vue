@@ -2,7 +2,9 @@
       <div class="wrapper">
         <cards  v-for="item in movies[0]"
                 :key="item.id"
+                :id="item.id"
                 :img="item.poster_path"
+                :name="item.title"
                 :description="item.title"
                 :rating="item.vote_average"/>
       </div>
@@ -18,7 +20,7 @@ export default {
     Cards,
   },
   unmounted() {
-    console.log('unmounted');
+    console.log(this.movies, 'unmounted');
   },
   setup() {
     const store = useStore();

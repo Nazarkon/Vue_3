@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" @click="routeToDetails">
     <div class="container_img">
       <img class="img" :src="'https://www.themoviedb.org/t/p/w300_and_h450_face' + img" alt="logo">
     </div>
@@ -14,17 +14,33 @@
 export default {
   name: 'Сards',
   props: {
+    id: {
+      type: Number,
+      default: null,
+    },
     img: {
+      type: String,
+      default: '#',
+    },
+    name: {
       type: String,
       default: '#',
     },
     description: {
       type: String,
-      default: 'wwwwwwwwwwwwwwww',
+      default: '',
     },
     rating: {
       type: [String, Number],
       default: '7.3',
+    },
+  },
+  methods: {
+    routeToDetails() {
+      console.log(this.id);
+      const kebabCase = this.name.replace(/([a-z])([A-Z])/g, '$1-$2').replace(/\s+/g, '-').toLowerCase();
+
+      this.$router.push(`/details/${kebabCase}/${this.id}`);
     },
   },
 };
